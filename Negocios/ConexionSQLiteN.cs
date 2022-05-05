@@ -1,4 +1,5 @@
 ﻿using Datos;
+using System.Data;
 
 namespace Negocios
 {
@@ -9,6 +10,11 @@ namespace Negocios
         public int ConSQLite(string user, string pass)
         {
             return ConexionSQLite.ConsultaLogin(user, pass);
+        }
+
+        public DataTable ConsultaDT()
+        {
+            return ConexionSQLite.ConsultarUsuarios();
         }
     }
 }

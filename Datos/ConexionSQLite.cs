@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.SQLite;
+using System.Data;
 
 namespace Datos
 {
@@ -20,6 +21,15 @@ namespace Datos
             return count;
         }
 
-        public DataTable ConsultarUsuarios
+        public DataTable ConsultarUsuarios()
+        {
+            string query = "select * from Tbl_Persona";
+            SQLiteCommand cmd = new SQLiteCommand(query, SQLite);
+            SQLiteDataAdapter data = new SQLiteDataAdapter(cmd);
+            DataTable table = new DataTable();
+            data.Fill(table);
+            return table;
+
+        }
     }
 }

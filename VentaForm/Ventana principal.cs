@@ -19,12 +19,12 @@ namespace VentaForm
             Application.Exit();
         }
 
-        private void mS_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        private void MS_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
         }
 
-        private void mSAbrirFactura_Click(object sender, EventArgs e)
+        private void MSAbrirFactura_Click(object sender, EventArgs e)
         {
 
         }

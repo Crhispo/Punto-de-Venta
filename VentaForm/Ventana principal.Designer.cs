@@ -56,7 +56,7 @@
             this.mS.Size = new System.Drawing.Size(583, 24);
             this.mS.TabIndex = 1;
             this.mS.Text = "Menu";
-            this.mS.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.mS_ItemClicked);
+            this.mS.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.MS_ItemClicked);
             // 
             // MiArchivos
             // 
@@ -71,7 +71,7 @@
             this.mSAbrirFactura.Name = "mSAbrirFactura";
             this.mSAbrirFactura.Size = new System.Drawing.Size(180, 22);
             this.mSAbrirFactura.Text = "Abrir factura";
-            this.mSAbrirFactura.Click += new System.EventHandler(this.mSAbrirFactura_Click);
+            this.mSAbrirFactura.Click += new System.EventHandler(this.MSAbrirFactura_Click);
             // 
             // MiUsuarios
             // 
