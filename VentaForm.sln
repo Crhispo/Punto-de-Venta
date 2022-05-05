@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VentaForm", "VentaForm\VentaForm.csproj", "{230066F7-7723-4A1C-91E9-0A55FCF97DF1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Presentacion", "VentaForm\Presentacion.csproj", "{230066F7-7723-4A1C-91E9-0A55FCF97DF1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Negocios", "Negocios\Negocios.csproj", "{E7E6234F-FBB5-47C2-965F-AC565451DA1C}"
 EndProject

@@ -19,5 +19,7 @@ namespace Datos
 
             return count;
         }
+
+        public DataTable ConsultarUsuarios
     }
 }
