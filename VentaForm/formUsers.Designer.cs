@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.DGUsers = new System.Windows.Forms.DataGridView();
-            this.conexionSQLiteNBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.BtnVolver = new System.Windows.Forms.Button();
             this.BtnNuevoUser = new System.Windows.Forms.Button();
             this.BtnActualizarUser = new System.Windows.Forms.Button();
@@ -43,16 +41,16 @@
             this.LbDNI = new System.Windows.Forms.Label();
             this.TBTelefono = new System.Windows.Forms.TextBox();
             this.LbTelefono = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.TBClave = new System.Windows.Forms.TextBox();
             this.LbClave = new System.Windows.Forms.Label();
             this.TBUsuario = new System.Windows.Forms.TextBox();
             this.LbUsuario = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DGUsers)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.conexionSQLiteNBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // DGUsers
             // 
+            this.DGUsers.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.DGUsers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.DGUsers.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DGUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -63,12 +61,9 @@
             this.DGUsers.TabIndex = 0;
             this.DGUsers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGUsers_CellContentClick);
             // 
-            // conexionSQLiteNBindingSource
-            // 
-            this.conexionSQLiteNBindingSource.DataSource = typeof(Negocios.ConexionSQLiteN);
-            // 
             // BtnVolver
             // 
+            this.BtnVolver.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnVolver.Location = new System.Drawing.Point(647, 326);
             this.BtnVolver.Name = "BtnVolver";
             this.BtnVolver.Size = new System.Drawing.Size(94, 43);
@@ -79,6 +74,7 @@
             // 
             // BtnNuevoUser
             // 
+            this.BtnNuevoUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnNuevoUser.Location = new System.Drawing.Point(315, 326);
             this.BtnNuevoUser.Name = "BtnNuevoUser";
             this.BtnNuevoUser.Size = new System.Drawing.Size(94, 43);
@@ -89,6 +85,7 @@
             // 
             // BtnActualizarUser
             // 
+            this.BtnActualizarUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnActualizarUser.Location = new System.Drawing.Point(415, 326);
             this.BtnActualizarUser.Name = "BtnActualizarUser";
             this.BtnActualizarUser.Size = new System.Drawing.Size(110, 43);
@@ -99,6 +96,7 @@
             // 
             // BtnElminarUser
             // 
+            this.BtnElminarUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnElminarUser.Location = new System.Drawing.Point(531, 326);
             this.BtnElminarUser.Name = "BtnElminarUser";
             this.BtnElminarUser.Size = new System.Drawing.Size(110, 43);
@@ -177,13 +175,13 @@
             this.LbTelefono.TabIndex = 12;
             this.LbTelefono.Text = "Telefono";
             // 
-            // textBox4
+            // TBClave
             // 
-            this.textBox4.Location = new System.Drawing.Point(12, 288);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.textBox4.Size = new System.Drawing.Size(200, 23);
-            this.textBox4.TabIndex = 15;
+            this.TBClave.Location = new System.Drawing.Point(12, 288);
+            this.TBClave.Name = "TBClave";
+            this.TBClave.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.TBClave.Size = new System.Drawing.Size(200, 23);
+            this.TBClave.TabIndex = 15;
             // 
             // LbClave
             // 
@@ -220,7 +218,7 @@
             this.ClientSize = new System.Drawing.Size(753, 381);
             this.Controls.Add(this.TBUsuario);
             this.Controls.Add(this.LbUsuario);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.TBClave);
             this.Controls.Add(this.LbClave);
             this.Controls.Add(this.TBTelefono);
             this.Controls.Add(this.LbTelefono);
@@ -239,7 +237,6 @@
             this.Text = "FormUsers";
             this.Load += new System.EventHandler(this.FormUsers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGUsers)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.conexionSQLiteNBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -248,7 +245,6 @@
         #endregion
 
         private DataGridView DGUsers;
-        private BindingSource conexionSQLiteNBindingSource;
         private Button BtnVolver;
         private Button BtnNuevoUser;
         private Button BtnActualizarUser;
@@ -261,7 +257,7 @@
         private Label LbDNI;
         private TextBox TBTelefono;
         private Label LbTelefono;
-        private TextBox textBox4;
+        private TextBox TBClave;
         private Label LbClave;
         private TextBox TBUsuario;
         private Label LbUsuario;
