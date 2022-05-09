@@ -5,31 +5,31 @@ namespace Negocios
 {
     public class ConexionSQLiteN
     {
-        readonly ConexionSQLite ConexionSQLite = new ConexionSQLite();
+        readonly GestionSQLiteUsers gestionSQLiteUsers = new GestionSQLiteUsers();
 
         public int ConSQLite(string user, string pass)
         {
-            return ConexionSQLite.ConsultaLogin(user, pass);
+            return gestionSQLiteUsers.ConsultaLogin(user, pass);
         }
 
         public int InsertarUsuarioN(string nombre, string apellidos, string dni, string telefono, string usuario, string clave)
         {
-            return ConexionSQLite.InsertarUsuario(nombre, apellidos, dni, telefono, usuario, clave);
+            return gestionSQLiteUsers.InsertarUsuario(nombre, apellidos, dni, telefono, usuario, clave);
         }
 
         public int ModificarUsuarioN(string nombre, string apellidos, string dni, string telefono, string usuario, string clave)
         {
-            return ConexionSQLite.ModificarUsuario(nombre, apellidos, dni, telefono, usuario, clave);
+            return gestionSQLiteUsers.ModificarUsuario(nombre, apellidos, dni, telefono, usuario, clave);
         }
 
         public int EliminarUsuarioN(string dni)
         {
-            return ConexionSQLite.EliminarUsuario(dni);
+            return gestionSQLiteUsers.EliminarUsuario(dni);
         }
 
         public DataTable ConsultaDT()
         {
-            return ConexionSQLite.ConsultarUsuarios();
+            return gestionSQLiteUsers.ConsultarUsuarios();
         }
 
 
