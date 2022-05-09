@@ -33,7 +33,9 @@
             this.MiArchivos = new System.Windows.Forms.ToolStripMenuItem();
             this.mSAbrirFactura = new System.Windows.Forms.ToolStripMenuItem();
             this.MiUsuarios = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.mS.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnCerrar
@@ -69,7 +71,7 @@
             // mSAbrirFactura
             // 
             this.mSAbrirFactura.Name = "mSAbrirFactura";
-            this.mSAbrirFactura.Size = new System.Drawing.Size(180, 22);
+            this.mSAbrirFactura.Size = new System.Drawing.Size(140, 22);
             this.mSAbrirFactura.Text = "Abrir factura";
             this.mSAbrirFactura.Click += new System.EventHandler(this.MSAbrirFactura_Click);
             // 
@@ -80,11 +82,23 @@
             this.MiUsuarios.Text = "Usuarios";
             this.MiUsuarios.Click += new System.EventHandler(this.MiUsuarios_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Presentacion.Properties.Resources.pngegg;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 27);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(95, 111);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.PBlogo_Click);
+            // 
             // VentanaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(583, 271);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.BtnCerrar);
             this.Controls.Add(this.mS);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -95,11 +109,11 @@
             this.Load += new System.EventHandler(this.VentanaPrincipal_Load);
             this.mS.ResumeLayout(false);
             this.mS.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
-
         #endregion
 
         private Button BtnCerrar;
@@ -107,5 +121,6 @@
         private ToolStripMenuItem MiArchivos;
         private ToolStripMenuItem mSAbrirFactura;
         private ToolStripMenuItem MiUsuarios;
+        private PictureBox pictureBox1;
     }
 }

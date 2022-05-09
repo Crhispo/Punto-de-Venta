@@ -12,7 +12,7 @@ namespace Presentacion
 
         private void FormUsers_Load(object sender, EventArgs e)
         {
-
+            DGUsers.DataSource = SQLiteN.ConsultaDT();
         }
 
         private void DGUsers_CellContentClick(object sender, DataGridViewCellEventArgs e)
