@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.PBLogo = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -38,19 +38,19 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // PBLogo
             // 
-            this.pictureBox1.Image = global::Presentacion.Properties.Resources.pngegg;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(95, 111);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.PBLogo.Image = global::Presentacion.Properties.Resources.pngegg;
+            this.PBLogo.Location = new System.Drawing.Point(12, 12);
+            this.PBLogo.Name = "PBLogo";
+            this.PBLogo.Size = new System.Drawing.Size(95, 111);
+            this.PBLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PBLogo.TabIndex = 3;
+            this.PBLogo.TabStop = false;
             // 
             // dataGridView1
             // 
@@ -139,10 +139,10 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.PBLogo);
             this.Name = "FormInventory";
             this.Text = "FormInventory";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -151,7 +151,7 @@
 
         #endregion
 
-        private PictureBox pictureBox1;
+        private PictureBox PBLogo;
         private DataGridView dataGridView1;
         private TextBox textBox1;
         private TextBox textBox2;

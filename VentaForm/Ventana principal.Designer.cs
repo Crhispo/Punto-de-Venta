@@ -33,9 +33,9 @@
             this.MiArchivos = new System.Windows.Forms.ToolStripMenuItem();
             this.mSAbrirFactura = new System.Windows.Forms.ToolStripMenuItem();
             this.MiUsuarios = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.PBLogo = new System.Windows.Forms.PictureBox();
             this.mS.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnCerrar
@@ -82,23 +82,22 @@
             this.MiUsuarios.Text = "Usuarios";
             this.MiUsuarios.Click += new System.EventHandler(this.MiUsuarios_Click);
             // 
-            // pictureBox1
+            // PBLogo
             // 
-            this.pictureBox1.Image = global::Presentacion.Properties.Resources.pngegg;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 27);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(95, 111);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.PBlogo_Click);
+            this.PBLogo.Image = global::Presentacion.Properties.Resources.pngegg;
+            this.PBLogo.Location = new System.Drawing.Point(12, 27);
+            this.PBLogo.Name = "PBLogo";
+            this.PBLogo.Size = new System.Drawing.Size(114, 112);
+            this.PBLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PBLogo.TabIndex = 0;
+            this.PBLogo.TabStop = false;
             // 
             // VentanaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(583, 271);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.PBLogo);
             this.Controls.Add(this.BtnCerrar);
             this.Controls.Add(this.mS);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -109,7 +108,7 @@
             this.Load += new System.EventHandler(this.VentanaPrincipal_Load);
             this.mS.ResumeLayout(false);
             this.mS.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PBLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -121,6 +120,6 @@
         private ToolStripMenuItem MiArchivos;
         private ToolStripMenuItem mSAbrirFactura;
         private ToolStripMenuItem MiUsuarios;
-        private PictureBox pictureBox1;
+        private PictureBox PBLogo;
     }
 }

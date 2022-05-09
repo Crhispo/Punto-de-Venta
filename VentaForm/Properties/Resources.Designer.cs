@@ -63,26 +63,6 @@ namespace Presentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap hamster_png_hd_hamsters_animal_lovely_hamsters_png_image_260 {
-            get {
-                object obj = ResourceManager.GetObject("hamster-png-hd-hamsters-animal-lovely-hamsters-png-image-260", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap hamster_png_hd_nice_images_collection_hamster_desktop_wallpapers_367 {
-            get {
-                object obj = ResourceManager.GetObject("hamster-png-hd-nice-images-collection-hamster-desktop-wallpapers-367", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap pngegg {
             get {
                 object obj = ResourceManager.GetObject("pngegg", resourceCulture);

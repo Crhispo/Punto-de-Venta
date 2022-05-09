@@ -36,10 +36,5 @@ namespace VentaForm
             FU.ShowDialog();
             this.Show();
         }
-
-        private void PBlogo_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
