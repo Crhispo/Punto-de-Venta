@@ -45,6 +45,8 @@
             this.BtnActualizarProduct = new System.Windows.Forms.Button();
             this.BtnNuevoProduct = new System.Windows.Forms.Button();
             this.BtnBuscarId = new System.Windows.Forms.Button();
+            this.LbCodigo = new System.Windows.Forms.Label();
+            this.TBCodigo = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.PBLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGInventory)).BeginInit();
             this.SuspendLayout();
@@ -68,7 +70,7 @@
             this.DGInventory.Location = new System.Drawing.Point(255, 12);
             this.DGInventory.Name = "DGInventory";
             this.DGInventory.RowTemplate.Height = 25;
-            this.DGInventory.Size = new System.Drawing.Size(470, 222);
+            this.DGInventory.Size = new System.Drawing.Size(584, 222);
             this.DGInventory.TabIndex = 4;
             // 
             // TBProducto
@@ -154,7 +156,7 @@
             // BtnVolver
             // 
             this.BtnVolver.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnVolver.Location = new System.Drawing.Point(631, 311);
+            this.BtnVolver.Location = new System.Drawing.Point(745, 311);
             this.BtnVolver.Name = "BtnVolver";
             this.BtnVolver.Size = new System.Drawing.Size(94, 43);
             this.BtnVolver.TabIndex = 15;
@@ -165,7 +167,7 @@
             // BtnElminarProduct
             // 
             this.BtnElminarProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnElminarProduct.Location = new System.Drawing.Point(515, 311);
+            this.BtnElminarProduct.Location = new System.Drawing.Point(629, 311);
             this.BtnElminarProduct.Name = "BtnElminarProduct";
             this.BtnElminarProduct.Size = new System.Drawing.Size(110, 43);
             this.BtnElminarProduct.TabIndex = 16;
@@ -176,7 +178,7 @@
             // BtnActualizarProduct
             // 
             this.BtnActualizarProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnActualizarProduct.Location = new System.Drawing.Point(399, 311);
+            this.BtnActualizarProduct.Location = new System.Drawing.Point(513, 311);
             this.BtnActualizarProduct.Name = "BtnActualizarProduct";
             this.BtnActualizarProduct.Size = new System.Drawing.Size(110, 43);
             this.BtnActualizarProduct.TabIndex = 17;
@@ -187,7 +189,7 @@
             // BtnNuevoProduct
             // 
             this.BtnNuevoProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnNuevoProduct.Location = new System.Drawing.Point(299, 311);
+            this.BtnNuevoProduct.Location = new System.Drawing.Point(413, 311);
             this.BtnNuevoProduct.Name = "BtnNuevoProduct";
             this.BtnNuevoProduct.Size = new System.Drawing.Size(94, 43);
             this.BtnNuevoProduct.TabIndex = 18;
@@ -207,11 +209,29 @@
             this.BtnBuscarId.UseVisualStyleBackColor = true;
             this.BtnBuscarId.Click += new System.EventHandler(this.BtnBuscarId_Click);
             // 
+            // LbCodigo
+            // 
+            this.LbCodigo.AutoSize = true;
+            this.LbCodigo.Location = new System.Drawing.Point(113, 188);
+            this.LbCodigo.Name = "LbCodigo";
+            this.LbCodigo.Size = new System.Drawing.Size(46, 15);
+            this.LbCodigo.TabIndex = 21;
+            this.LbCodigo.Text = "Codigo";
+            // 
+            // TBCodigo
+            // 
+            this.TBCodigo.Location = new System.Drawing.Point(113, 206);
+            this.TBCodigo.Name = "TBCodigo";
+            this.TBCodigo.Size = new System.Drawing.Size(136, 23);
+            this.TBCodigo.TabIndex = 20;
+            // 
             // FormInventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(737, 366);
+            this.ClientSize = new System.Drawing.Size(851, 366);
+            this.Controls.Add(this.LbCodigo);
+            this.Controls.Add(this.TBCodigo);
             this.Controls.Add(this.BtnBuscarId);
             this.Controls.Add(this.BtnNuevoProduct);
             this.Controls.Add(this.BtnActualizarProduct);
@@ -257,5 +277,7 @@
         private Button BtnActualizarProduct;
         private Button BtnNuevoProduct;
         private Button BtnBuscarId;
+        private Label LbCodigo;
+        private TextBox TBCodigo;
     }
 }

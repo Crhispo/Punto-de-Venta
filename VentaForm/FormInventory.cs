@@ -27,7 +27,7 @@ namespace Presentacion
         }
         private void BtnActualizarProduct_Click(object sender, EventArgs e)
         {
-            int Data = gestionSQLiteInventoryN.ModificarProductoN(TBId.Text, TBProducto.Text, TBCategoria.Text, TBPrecio.Text, TBCantidad.Text);
+            int Data = gestionSQLiteInventoryN.ModificarProductoN(TBId.Text, TBProducto.Text, TBCategoria.Text, TBPrecio.Text, TBCantidad.Text,TBCodigo.Text);
             if (Data == 1)
             {
                 MessageBox.Show($"Se actualizo con exito el producto con id : {TBId.Text}");
@@ -40,7 +40,7 @@ namespace Presentacion
         }
         private void BtnNuevoProduct_Click(object sender, EventArgs e)
         {
-            gestionSQLiteInventoryN.InsertarProductoN(TBProducto.Text, TBCategoria.Text, TBPrecio.Text, TBCantidad.Text);
+            gestionSQLiteInventoryN.InsertarProductoN(TBProducto.Text, TBCategoria.Text, TBPrecio.Text, TBCantidad.Text, TBCodigo.Text);
             DGInventory.DataSource = gestionSQLiteInventoryN.ConsultaDTProduct();
         }
         private void BtnBuscarId_Click(object sender, EventArgs e)
