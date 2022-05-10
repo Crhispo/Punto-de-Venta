@@ -17,8 +17,6 @@ namespace Datos
             Codigo numerico tipo de Query
             Consulta Login = 0
             Modificar datos de tabla = 1
-            Consultar id = 2
-            Consuta tabla adapter = 3
             */
             switch (TipoQuery)
             {
