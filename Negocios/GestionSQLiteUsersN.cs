@@ -3,7 +3,7 @@ using System.Data;
 
 namespace Negocios
 {
-    public class ConexionSQLiteN
+    public class GestionSQLiteUsersN
     {
         readonly GestionSQLiteUsers gestionSQLiteUsers = new GestionSQLiteUsers();
 
@@ -27,7 +27,7 @@ namespace Negocios
             return gestionSQLiteUsers.EliminarUsuario(dni);
         }
 
-        public DataTable ConsultaDT()
+        public DataTable ConsultaDTUsers()
         {
             return gestionSQLiteUsers.ConsultarUsuarios();
         }

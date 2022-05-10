@@ -42,7 +42,6 @@
             this.TbUser.Name = "TbUser";
             this.TbUser.Size = new System.Drawing.Size(178, 23);
             this.TbUser.TabIndex = 0;
-            this.TbUser.TextChanged += new System.EventHandler(this.TbUser_TextChanged);
             // 
             // TbPassword
             // 
@@ -51,7 +50,6 @@
             this.TbPassword.Size = new System.Drawing.Size(178, 23);
             this.TbPassword.TabIndex = 1;
             this.TbPassword.UseSystemPasswordChar = true;
-            this.TbPassword.TextChanged += new System.EventHandler(this.TbPassword_TextChanged);
             // 
             // Usuario
             // 
@@ -61,7 +59,6 @@
             this.Usuario.Size = new System.Drawing.Size(47, 15);
             this.Usuario.TabIndex = 2;
             this.Usuario.Text = "Usuario";
-            this.Usuario.Click += new System.EventHandler(this.LbUser_Click);
             // 
             // Clave
             // 
@@ -71,7 +68,6 @@
             this.Clave.Size = new System.Drawing.Size(36, 15);
             this.Clave.TabIndex = 3;
             this.Clave.Text = "Clave";
-            this.Clave.Click += new System.EventHandler(this.LbClave_Click);
             // 
             // BtnLogin
             // 
@@ -107,7 +103,6 @@
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

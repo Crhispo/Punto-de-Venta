@@ -67,7 +67,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConexionSQLiteN.cs" />
+    <Compile Include="GestionSQLiteInventoryN.cs" />
+    <Compile Include="GestionSQLiteUsersN.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

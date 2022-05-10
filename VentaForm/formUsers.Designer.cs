@@ -21,7 +21,6 @@
         }
 
         #region Windows Form Designer generated code
-
         /// <summary>
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
@@ -59,7 +58,6 @@
             this.DGUsers.RowTemplate.Height = 25;
             this.DGUsers.Size = new System.Drawing.Size(514, 255);
             this.DGUsers.TabIndex = 0;
-            this.DGUsers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGUsers_CellContentClick);
             // 
             // BtnVolver
             // 
@@ -121,7 +119,6 @@
             this.TBNombre.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.TBNombre.Size = new System.Drawing.Size(200, 23);
             this.TBNombre.TabIndex = 7;
-            this.TBNombre.TextChanged += new System.EventHandler(this.TBNombre_TextChanged);
             // 
             // LbApellidos
             // 
@@ -139,7 +136,6 @@
             this.TBApellidos.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.TBApellidos.Size = new System.Drawing.Size(200, 23);
             this.TBApellidos.TabIndex = 9;
-            this.TBApellidos.TextChanged += new System.EventHandler(this.TBApellidos_TextChanged);
             // 
             // TBDNI
             // 
@@ -199,7 +195,6 @@
             this.TBUsuario.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.TBUsuario.Size = new System.Drawing.Size(200, 23);
             this.TBUsuario.TabIndex = 17;
-            this.TBUsuario.TextChanged += new System.EventHandler(this.TBUsuario_TextChanged);
             // 
             // LbUsuario
             // 
@@ -209,7 +204,6 @@
             this.LbUsuario.Size = new System.Drawing.Size(47, 15);
             this.LbUsuario.TabIndex = 16;
             this.LbUsuario.Text = "Usuario";
-            this.LbUsuario.Click += new System.EventHandler(this.LbUsuario_Click);
             // 
             // FormUsers
             // 
