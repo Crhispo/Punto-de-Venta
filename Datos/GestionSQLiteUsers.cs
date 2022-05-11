@@ -37,7 +37,7 @@ namespace Datos
         public DataTable ConsultarUsuarios()
         {
             string Query = "select * from Tbl_Persona";
-            DataTable table = conexionSQLite.ConsultarUsers(Query);
+            DataTable table = conexionSQLite.Consultartable(Query);
             return table;
         }
     }

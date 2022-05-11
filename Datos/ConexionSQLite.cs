@@ -36,7 +36,7 @@ namespace Datos
             SQLite.Close();
             return resp;
         }
-        public DataTable ConsultarUsers(string Query)
+        public DataTable Consultartable(string Query)
         {
             SQLite.Open();
             SQLiteCommand cmd = new SQLiteCommand(Query, SQLite);
@@ -45,6 +45,18 @@ namespace Datos
             data.Fill(table);
             SQLite.Close();
             return table;
+        }
+
+        public string ConsultarDatosSQLite(string Query)
+        {
+            SQLite.Open();
+            string resp;
+            SQLiteCommand cmd = new SQLiteCommand(Query, SQLite);
+            SQLiteDataReader reg = cmd.ExecuteReader();
+            if (reg.Read()) { resp = reg["numfact"].ToString(); }
+            else { resp = "Null"; }
+            SQLite.Close();
+            return resp;
         }
     }
 }

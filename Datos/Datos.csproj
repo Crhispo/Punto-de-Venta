@@ -80,6 +80,7 @@
   <ItemGroup>
     <Compile Include="ConexionSQLite.cs" />
     <Compile Include="GestionSQLiteInventory.cs" />
+    <Compile Include="GestionSQLiteInvoicing.cs" />
     <Compile Include="GestionSQLiteUsers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

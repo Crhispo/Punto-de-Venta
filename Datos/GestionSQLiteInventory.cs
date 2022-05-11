@@ -32,7 +32,7 @@ namespace Datos
         public DataTable ConsultarProducto()
         {
             string Query = "select * from Tbl_Inventario";
-            DataTable table = conexionSQLite.ConsultarUsers(Query);
+            DataTable table = conexionSQLite.Consultartable(Query);
             return table;
         }
     }
