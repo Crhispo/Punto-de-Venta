@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GestionSQLiteInventoryN.cs" />
+    <Compile Include="GestionSQLiteInvoicingN.cs" />
     <Compile Include="GestionSQLiteUsersN.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

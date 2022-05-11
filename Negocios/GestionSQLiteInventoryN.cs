@@ -8,7 +8,7 @@ namespace Negocios
         readonly GestionSQLiteInventory gestionSQLiteInventory = new GestionSQLiteInventory();
         public int InsertarProductoN(string producto, string categoria, string precio, string cantdad, string codigo)
         {
-            return gestionSQLiteInventory.InsertarProducto(producto, categoria, precio, cantdad,codigo);
+            return gestionSQLiteInventory.InsertarProducto(producto, categoria, precio, cantdad, codigo);
         }
         public int ModificarProductoN(string id, string producto, string categoria, string precio, string cantdad, string codigo)
         {
