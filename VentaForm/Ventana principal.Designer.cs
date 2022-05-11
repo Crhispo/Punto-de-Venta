@@ -32,12 +32,16 @@
             this.mS = new System.Windows.Forms.MenuStrip();
             this.MiArchivos = new System.Windows.Forms.ToolStripMenuItem();
             this.mSAImpDescuento = new System.Windows.Forms.ToolStripMenuItem();
+            this.MiImpVenta = new System.Windows.Forms.ToolStripMenuItem();
+            this.TBImpVenta = new System.Windows.Forms.ToolStripTextBox();
+            this.MiDescuento = new System.Windows.Forms.ToolStripMenuItem();
+            this.TBDescuento = new System.Windows.Forms.ToolStripTextBox();
             this.MiUsuarios = new System.Windows.Forms.ToolStripMenuItem();
             this.MiInventario = new System.Windows.Forms.ToolStripMenuItem();
             this.MiClientes = new System.Windows.Forms.ToolStripMenuItem();
             this.MiReportes = new System.Windows.Forms.ToolStripMenuItem();
             this.PBLogo = new System.Windows.Forms.PictureBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DtgFacturacion = new System.Windows.Forms.DataGridView();
             this.BtnAgregarProducto = new System.Windows.Forms.Button();
             this.TBCodigoProducto = new System.Windows.Forms.TextBox();
             this.LbCodigoProducto = new System.Windows.Forms.Label();
@@ -46,31 +50,27 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TBDescuentoRead = new System.Windows.Forms.TextBox();
             this.BtnFacturar = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.TBCantidad = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.TBImpVentaRead = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.TBNumFact = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.MiImpVenta = new System.Windows.Forms.ToolStripMenuItem();
-            this.MiDescuento = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.mS.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBLogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DtgFacturacion)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnCerrar
             // 
-            this.BtnCerrar.Location = new System.Drawing.Point(767, 373);
+            this.BtnCerrar.Location = new System.Drawing.Point(683, 373);
             this.BtnCerrar.Name = "BtnCerrar";
             this.BtnCerrar.Size = new System.Drawing.Size(90, 29);
             this.BtnCerrar.TabIndex = 0;
@@ -88,7 +88,7 @@
             this.MiReportes});
             this.mS.Location = new System.Drawing.Point(0, 0);
             this.mS.Name = "mS";
-            this.mS.Size = new System.Drawing.Size(869, 24);
+            this.mS.Size = new System.Drawing.Size(785, 24);
             this.mS.TabIndex = 1;
             this.mS.Text = "Menu";
             // 
@@ -108,6 +108,36 @@
             this.mSAImpDescuento.Name = "mSAImpDescuento";
             this.mSAImpDescuento.Size = new System.Drawing.Size(195, 22);
             this.mSAImpDescuento.Text = "Imp venta y Descuento";
+            // 
+            // MiImpVenta
+            // 
+            this.MiImpVenta.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TBImpVenta});
+            this.MiImpVenta.Name = "MiImpVenta";
+            this.MiImpVenta.Size = new System.Drawing.Size(130, 22);
+            this.MiImpVenta.Text = "imp Venta";
+            // 
+            // TBImpVenta
+            // 
+            this.TBImpVenta.Name = "TBImpVenta";
+            this.TBImpVenta.Size = new System.Drawing.Size(110, 23);
+            this.TBImpVenta.Text = "0";
+            this.TBImpVenta.TextChanged += new System.EventHandler(this.TBImpVenta_TextChanged);
+            // 
+            // MiDescuento
+            // 
+            this.MiDescuento.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TBDescuento});
+            this.MiDescuento.Name = "MiDescuento";
+            this.MiDescuento.Size = new System.Drawing.Size(130, 22);
+            this.MiDescuento.Text = "Descuento";
+            // 
+            // TBDescuento
+            // 
+            this.TBDescuento.Name = "TBDescuento";
+            this.TBDescuento.Size = new System.Drawing.Size(100, 23);
+            this.TBDescuento.Text = "0";
+            this.TBDescuento.TextChanged += new System.EventHandler(this.TBDescuento_TextChanged);
             // 
             // MiUsuarios
             // 
@@ -145,28 +175,29 @@
             this.PBLogo.TabIndex = 0;
             this.PBLogo.TabStop = false;
             // 
-            // dataGridView1
+            // DtgFacturacion
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(132, 56);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(725, 182);
-            this.dataGridView1.TabIndex = 2;
+            this.DtgFacturacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DtgFacturacion.Location = new System.Drawing.Point(132, 56);
+            this.DtgFacturacion.Name = "DtgFacturacion";
+            this.DtgFacturacion.RowTemplate.Height = 25;
+            this.DtgFacturacion.Size = new System.Drawing.Size(641, 182);
+            this.DtgFacturacion.TabIndex = 2;
             // 
             // BtnAgregarProducto
             // 
             this.BtnAgregarProducto.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.BtnAgregarProducto.Location = new System.Drawing.Point(501, 288);
+            this.BtnAgregarProducto.Location = new System.Drawing.Point(400, 288);
             this.BtnAgregarProducto.Name = "BtnAgregarProducto";
             this.BtnAgregarProducto.Size = new System.Drawing.Size(235, 45);
             this.BtnAgregarProducto.TabIndex = 3;
             this.BtnAgregarProducto.Text = "Agregar Producto";
             this.BtnAgregarProducto.UseVisualStyleBackColor = true;
+            this.BtnAgregarProducto.Click += new System.EventHandler(this.BtnAgregarProducto_Click);
             // 
             // TBCodigoProducto
             // 
-            this.TBCodigoProducto.Location = new System.Drawing.Point(501, 259);
+            this.TBCodigoProducto.Location = new System.Drawing.Point(400, 259);
             this.TBCodigoProducto.Name = "TBCodigoProducto";
             this.TBCodigoProducto.Size = new System.Drawing.Size(114, 23);
             this.TBCodigoProducto.TabIndex = 4;
@@ -174,7 +205,7 @@
             // LbCodigoProducto
             // 
             this.LbCodigoProducto.AutoSize = true;
-            this.LbCodigoProducto.Location = new System.Drawing.Point(501, 241);
+            this.LbCodigoProducto.Location = new System.Drawing.Point(400, 241);
             this.LbCodigoProducto.Name = "LbCodigoProducto";
             this.LbCodigoProducto.Size = new System.Drawing.Size(114, 15);
             this.LbCodigoProducto.TabIndex = 5;
@@ -229,47 +260,47 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "Descuento";
             // 
-            // textBox1
+            // TBDescuentoRead
             // 
-            this.textBox1.Location = new System.Drawing.Point(319, 288);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(59, 23);
-            this.textBox1.TabIndex = 11;
+            this.TBDescuentoRead.Location = new System.Drawing.Point(319, 288);
+            this.TBDescuentoRead.Name = "TBDescuentoRead";
+            this.TBDescuentoRead.ReadOnly = true;
+            this.TBDescuentoRead.Size = new System.Drawing.Size(59, 23);
+            this.TBDescuentoRead.TabIndex = 11;
             // 
             // BtnFacturar
             // 
             this.BtnFacturar.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.BtnFacturar.Location = new System.Drawing.Point(742, 259);
+            this.BtnFacturar.Location = new System.Drawing.Point(658, 259);
             this.BtnFacturar.Name = "BtnFacturar";
             this.BtnFacturar.Size = new System.Drawing.Size(115, 74);
             this.BtnFacturar.TabIndex = 12;
             this.BtnFacturar.Text = "Facturar";
             this.BtnFacturar.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // TBCantidad
             // 
-            this.textBox2.Location = new System.Drawing.Point(621, 259);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(115, 23);
-            this.textBox2.TabIndex = 13;
+            this.TBCantidad.Location = new System.Drawing.Point(520, 259);
+            this.TBCantidad.Name = "TBCantidad";
+            this.TBCantidad.Size = new System.Drawing.Size(115, 23);
+            this.TBCantidad.TabIndex = 13;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(621, 241);
+            this.label6.Location = new System.Drawing.Point(520, 241);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(55, 15);
             this.label6.TabIndex = 14;
             this.label6.Text = "Cantidad";
             // 
-            // textBox3
+            // TBImpVentaRead
             // 
-            this.textBox3.Location = new System.Drawing.Point(319, 259);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(59, 23);
-            this.textBox3.TabIndex = 16;
+            this.TBImpVentaRead.Location = new System.Drawing.Point(319, 259);
+            this.TBImpVentaRead.Name = "TBImpVentaRead";
+            this.TBImpVentaRead.ReadOnly = true;
+            this.TBImpVentaRead.Size = new System.Drawing.Size(59, 23);
+            this.TBImpVentaRead.TabIndex = 16;
             // 
             // label7
             // 
@@ -280,12 +311,13 @@
             this.label7.TabIndex = 15;
             this.label7.Text = "Imp Venta";
             // 
-            // textBox4
+            // TBNumFact
             // 
-            this.textBox4.Location = new System.Drawing.Point(198, 27);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(115, 23);
-            this.textBox4.TabIndex = 18;
+            this.TBNumFact.Location = new System.Drawing.Point(201, 27);
+            this.TBNumFact.Name = "TBNumFact";
+            this.TBNumFact.ReadOnly = true;
+            this.TBNumFact.Size = new System.Drawing.Size(115, 23);
+            this.TBNumFact.TabIndex = 18;
             // 
             // label8
             // 
@@ -324,7 +356,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(501, 30);
+            this.label10.Location = new System.Drawing.Point(417, 30);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(44, 15);
             this.label10.TabIndex = 22;
@@ -332,57 +364,29 @@
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(551, 27);
+            this.textBox6.Location = new System.Drawing.Point(467, 27);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(306, 23);
             this.textBox6.TabIndex = 23;
-            // 
-            // MiImpVenta
-            // 
-            this.MiImpVenta.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem2});
-            this.MiImpVenta.Name = "MiImpVenta";
-            this.MiImpVenta.Size = new System.Drawing.Size(180, 22);
-            this.MiImpVenta.Text = "imp Venta";
-            // 
-            // MiDescuento
-            // 
-            this.MiDescuento.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem3});
-            this.MiDescuento.Name = "MiDescuento";
-            this.MiDescuento.Size = new System.Drawing.Size(180, 22);
-            this.MiDescuento.Text = "Descuento";
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
-            this.toolStripMenuItem2.Text = "0";
-            // 
-            // toolStripMenuItem3
-            // 
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
-            this.toolStripMenuItem3.Text = "0";
             // 
             // VentanaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(869, 414);
+            this.ClientSize = new System.Drawing.Size(785, 414);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.TBNumFact);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.TBImpVentaRead);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.TBCantidad);
             this.Controls.Add(this.BtnFacturar);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.TBDescuentoRead);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -391,7 +395,7 @@
             this.Controls.Add(this.LbCodigoProducto);
             this.Controls.Add(this.TBCodigoProducto);
             this.Controls.Add(this.BtnAgregarProducto);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.DtgFacturacion);
             this.Controls.Add(this.PBLogo);
             this.Controls.Add(this.BtnCerrar);
             this.Controls.Add(this.mS);
@@ -403,7 +407,7 @@
             this.mS.ResumeLayout(false);
             this.mS.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DtgFacturacion)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -419,7 +423,7 @@
         private ToolStripMenuItem MiInventario;
         private ToolStripMenuItem MiClientes;
         private ToolStripMenuItem MiReportes;
-        private DataGridView dataGridView1;
+        private DataGridView DtgFacturacion;
         private Button BtnAgregarProducto;
         private TextBox TBCodigoProducto;
         private Label LbCodigoProducto;
@@ -428,13 +432,13 @@
         private Label label3;
         private Label label4;
         private Label label5;
-        private TextBox textBox1;
+        private TextBox TBDescuentoRead;
         private Button BtnFacturar;
-        private TextBox textBox2;
+        private TextBox TBCantidad;
         private Label label6;
-        private TextBox textBox3;
+        private TextBox TBImpVentaRead;
         private Label label7;
-        private TextBox textBox4;
+        private TextBox TBNumFact;
         private Label label8;
         private Button button1;
         private TextBox textBox5;
@@ -442,8 +446,8 @@
         private Label label10;
         private TextBox textBox6;
         private ToolStripMenuItem MiImpVenta;
-        private ToolStripMenuItem toolStripMenuItem2;
         private ToolStripMenuItem MiDescuento;
-        private ToolStripMenuItem toolStripMenuItem3;
+        private ToolStripTextBox TBImpVenta;
+        private ToolStripTextBox TBDescuento;
     }
 }

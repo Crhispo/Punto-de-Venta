@@ -27,7 +27,7 @@ namespace Presentacion
         }
         private void BtnActualizarProduct_Click(object sender, EventArgs e)
         {
-            int Data = gestionSQLiteInventoryN.ModificarProductoN(TBId.Text, TBProducto.Text, TBCategoria.Text, TBPrecio.Text, TBCantidad.Text,TBCodigo.Text);
+            int Data = gestionSQLiteInventoryN.ModificarProductoN(TBId.Text, TBProducto.Text, TBCategoria.Text, TBPrecio.Text, TBCantidad.Text, TBCodigo.Text);
             if (Data == 1)
             {
                 MessageBox.Show($"Se actualizo con exito el producto con id : {TBId.Text}");

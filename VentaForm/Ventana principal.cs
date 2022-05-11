@@ -1,12 +1,28 @@
-﻿using Presentacion;
+﻿using Negocios;
+using Presentacion;
+using System.Data;
 
 namespace VentaForm
 {
     public partial class VentanaPrincipal : Form
     {
+        readonly GestionSQLiteInvoicingN gestionSQLiteInvoicingN = new();
+        private readonly DataTable dt;
         public VentanaPrincipal()
         {
             InitializeComponent();
+            TBNumFact.Text = gestionSQLiteInvoicingN.ExtraerNumFact();
+            TBImpVentaRead.Text = TBImpVenta.Text;
+            TBDescuentoRead.Text = TBDescuento.Text;
+
+            dt = new DataTable();
+            dt.Columns.Add("Codigo");
+            dt.Columns.Add("Producto");
+            dt.Columns.Add("Precio x Unidad");
+            dt.Columns.Add("Cantidad");
+            dt.Columns.Add("Descuento");
+            dt.Columns.Add("Precio Total");
+            DtgFacturacion.DataSource = dt;
         }
         private void BtnCerrar_Click(object sender, EventArgs e)
         {
@@ -25,6 +41,29 @@ namespace VentaForm
             this.Hide();
             FU.ShowDialog();
             this.Show();
+        }
+
+        private void TBImpVenta_TextChanged(object sender, EventArgs e)
+        {
+            TBImpVentaRead.Text = TBImpVenta.Text;
+        }
+        private void TBDescuento_TextChanged(object sender, EventArgs e)
+        {
+            TBDescuentoRead.Text = TBDescuento.Text;
+        }
+
+        private void BtnAgregarProducto_Click(object sender, EventArgs e)
+        {
+            DataRow row = dt.NewRow();
+
+            row["Codigo"] = TBCodigoProducto.Text;
+            row["Producto"] = "";
+            row["Precio x Unidad"] = "";
+            row["Cantidad"] = TBCantidad.Text;
+            row["Descuento"] = TBDescuentoRead.Text;
+            row["Precio Total"] = "";
+
+            dt.Rows.Add(row);
         }
     }
 }
