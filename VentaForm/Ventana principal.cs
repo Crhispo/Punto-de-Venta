@@ -10,6 +10,7 @@ namespace VentaForm
         private readonly DataTable dt;
         public VentanaPrincipal()
         {
+
             InitializeComponent();
             TBNumFact.Text = gestionSQLiteInvoicingN.ExtraerNumFact();
             TBImpVentaRead.Text = TBImpVenta.Text;

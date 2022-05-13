@@ -7,7 +7,7 @@ namespace Negocios
         readonly GestionSQLiteInvoicing GestionSQLiteInvoicing = new GestionSQLiteInvoicing();
         public string ExtraerNumFact()
         {
-            return GestionSQLiteInvoicing.Consulatnumfact();
+            return GestionSQLiteInvoicing.Consultanumfact();
         }
     }
 }

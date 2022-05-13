@@ -47,7 +47,7 @@ namespace Datos
             return table;
         }
 
-        public string ConsultarDatosSQLite(string Query)
+        public string ConsultarNumFactSQLite(string Query)
         {
             SQLite.Open();
             string resp;
@@ -58,5 +58,17 @@ namespace Datos
             SQLite.Close();
             return resp;
         }
+        public Tuple<string,string> ConsultarDatosSQLite(string Query)
+        {
+            SQLite.Open();
+            Tuple<string,string> resp;
+            SQLiteCommand cmd = new SQLiteCommand(Query, SQLite);
+            SQLiteDataReader reg = cmd.ExecuteReader();
+            if (reg.Read()) { resp = Tuple.Create(reg["producto"].ToString(), reg["precio"].ToString()); }
+            else { resp = Tuple.Create("Null","Null"); }
+            SQLite.Close();
+            return resp;
+        }
+
     }
 }
