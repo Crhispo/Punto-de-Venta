@@ -57,12 +57,13 @@ namespace VentaForm
         {
             DataRow row = dt.NewRow();
 
+            var consulta = gestionSQLiteInvoicingN.ConsultaInventarioN(TBCodigoProducto.Text);
             row["Codigo"] = TBCodigoProducto.Text;
-            row["Producto"] = "";
-            row["Precio x Unidad"] = "";
+            row["Producto"] = consulta.Item1;
+            row["Precio x Unidad"] = consulta.Item2;
             row["Cantidad"] = TBCantidad.Text;
             row["Descuento"] = TBDescuentoRead.Text;
-            row["Precio Total"] = "";
+            row["Precio Total"] = int.Parse(TBCantidad.Text) * double.Parse(consulta.Item2);
 
             dt.Rows.Add(row);
         }

@@ -1,4 +1,5 @@
 ﻿using Datos;
+using System;
 
 namespace Negocios
 {
@@ -8,6 +9,11 @@ namespace Negocios
         public string ExtraerNumFact()
         {
             return GestionSQLiteInvoicing.Consultanumfact();
+        }
+        public Tuple<string, string> ConsultaInventarioN(string codigo)
+        {
+            return GestionSQLiteInvoicing.ConsultaInventario(codigo);
+
         }
     }
 }
