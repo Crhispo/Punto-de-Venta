@@ -11,9 +11,9 @@ namespace Datos
             string resp = conexionSQLite.ConsultarNumFactSQLite(Query);
             return resp;
         }
-        public Tuple<string,string> Consulafact(string codigo)
+        public Tuple<string, string> ConsultaInventario(string codigo)
         {
-            string Query = $"Select * from Tbl_Inventario where codigo = {codigo}";
+            string Query = $"Select * from Tbl_Inventario where Codigo = '{codigo}'";
             Tuple<string, string> resp = conexionSQLite.ConsultarDatosSQLite(Query);
             return resp;
         }
