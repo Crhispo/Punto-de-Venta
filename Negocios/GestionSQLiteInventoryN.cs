@@ -1,4 +1,5 @@
 ﻿using Datos;
+using System.Collections.Generic;
 using System.Data;
 
 namespace Negocios
@@ -17,6 +18,11 @@ namespace Negocios
         public int EliminarPrductoN(string id)
         {
             return gestionSQLiteInventory.EliminarProducto(id);
+        }
+        public List<string> ConsultaInventarioN(string codigo)
+        {
+            return gestionSQLiteInventory.ConsultaInventario(codigo);
+
         }
         public DataTable ConsultaDTProduct()
         {

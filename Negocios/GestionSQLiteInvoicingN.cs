@@ -1,19 +1,19 @@
 ﻿using Datos;
-using System;
+using Entidades;
+using System.Collections.Generic;
 
 namespace Negocios
 {
     public class GestionSQLiteInvoicingN
     {
         readonly GestionSQLiteInvoicing GestionSQLiteInvoicing = new GestionSQLiteInvoicing();
-        public string ExtraerNumFact()
+        public List<string> ExtraerNumFact()
         {
             return GestionSQLiteInvoicing.Consultanumfact();
         }
-        public Tuple<string, string> ConsultaInventarioN(string codigo)
+        public int InsertarFacturaN(List<Factura> ObjectFactura)
         {
-            return GestionSQLiteInvoicing.ConsultaInventario(codigo);
-
+            return GestionSQLiteInvoicing.InsertarFactura(ObjectFactura);
         }
     }
 }

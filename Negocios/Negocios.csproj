@@ -67,6 +67,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GestionSQLiteClientN.cs" />
     <Compile Include="GestionSQLiteInventoryN.cs" />
     <Compile Include="GestionSQLiteInvoicingN.cs" />
     <Compile Include="GestionSQLiteUsersN.cs" />
@@ -76,6 +77,10 @@
     <ProjectReference Include="..\Datos\Datos.csproj">
       <Project>{bf78a582-bc06-4c2c-9cbe-a31002743674}</Project>
       <Name>Datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
+      <Project>{8468ec04-8911-4a1a-995e-2d92bf5f8e08}</Project>
+      <Name>Entidades</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

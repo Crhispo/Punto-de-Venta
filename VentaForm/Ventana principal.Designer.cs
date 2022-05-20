@@ -45,10 +45,10 @@
             this.BtnAgregarProducto = new System.Windows.Forms.Button();
             this.TBCodigoProducto = new System.Windows.Forms.TextBox();
             this.LbCodigoProducto = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.LbSubtotal = new System.Windows.Forms.Label();
+            this.LbValorSubtotal = new System.Windows.Forms.Label();
+            this.Lbtotal = new System.Windows.Forms.Label();
+            this.LbValorTotal = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.TBDescuentoRead = new System.Windows.Forms.TextBox();
             this.BtnFacturar = new System.Windows.Forms.Button();
@@ -58,11 +58,11 @@
             this.label7 = new System.Windows.Forms.Label();
             this.TBNumFact = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.BtnCodigoCliente = new System.Windows.Forms.Button();
+            this.TBCodigoCliente = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.TBNombreCliente = new System.Windows.Forms.TextBox();
             this.mS.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DtgFacturacion)).BeginInit();
@@ -121,7 +121,7 @@
             // 
             this.TBImpVenta.Name = "TBImpVenta";
             this.TBImpVenta.Size = new System.Drawing.Size(110, 23);
-            this.TBImpVenta.Text = "0";
+            this.TBImpVenta.Text = "0,09";
             this.TBImpVenta.TextChanged += new System.EventHandler(this.TBImpVenta_TextChanged);
             // 
             // MiDescuento
@@ -136,7 +136,7 @@
             // 
             this.TBDescuento.Name = "TBDescuento";
             this.TBDescuento.Size = new System.Drawing.Size(100, 23);
-            this.TBDescuento.Text = "0";
+            this.TBDescuento.Text = "0,0";
             this.TBDescuento.TextChanged += new System.EventHandler(this.TBDescuento_TextChanged);
             // 
             // MiUsuarios
@@ -211,45 +211,45 @@
             this.LbCodigoProducto.TabIndex = 5;
             this.LbCodigoProducto.Text = "Codigo de Producto";
             // 
-            // label1
+            // LbSubtotal
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(132, 241);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 25);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Sub Total:";
+            this.LbSubtotal.AutoSize = true;
+            this.LbSubtotal.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LbSubtotal.Location = new System.Drawing.Point(132, 241);
+            this.LbSubtotal.Name = "LbSubtotal";
+            this.LbSubtotal.Size = new System.Drawing.Size(93, 25);
+            this.LbSubtotal.TabIndex = 6;
+            this.LbSubtotal.Text = "Sub Total:";
             // 
-            // label2
+            // LbValorSubtotal
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(132, 266);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 37);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "0.00";
+            this.LbValorSubtotal.AutoSize = true;
+            this.LbValorSubtotal.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LbValorSubtotal.Location = new System.Drawing.Point(132, 266);
+            this.LbValorSubtotal.Name = "LbValorSubtotal";
+            this.LbValorSubtotal.Size = new System.Drawing.Size(68, 37);
+            this.LbValorSubtotal.TabIndex = 7;
+            this.LbValorSubtotal.Text = "0.00";
             // 
-            // label3
+            // Lbtotal
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(253, 316);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 30);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Total:";
+            this.Lbtotal.AutoSize = true;
+            this.Lbtotal.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Lbtotal.Location = new System.Drawing.Point(253, 316);
+            this.Lbtotal.Name = "Lbtotal";
+            this.Lbtotal.Size = new System.Drawing.Size(62, 30);
+            this.Lbtotal.TabIndex = 8;
+            this.Lbtotal.Text = "Total:";
             // 
-            // label4
+            // LbValorTotal
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(253, 346);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(98, 54);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "0.00";
+            this.LbValorTotal.AutoSize = true;
+            this.LbValorTotal.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LbValorTotal.Location = new System.Drawing.Point(253, 346);
+            this.LbValorTotal.Name = "LbValorTotal";
+            this.LbValorTotal.Size = new System.Drawing.Size(98, 54);
+            this.LbValorTotal.TabIndex = 9;
+            this.LbValorTotal.Text = "0.00";
             // 
             // label5
             // 
@@ -265,7 +265,7 @@
             this.TBDescuentoRead.Location = new System.Drawing.Point(319, 288);
             this.TBDescuentoRead.Name = "TBDescuentoRead";
             this.TBDescuentoRead.ReadOnly = true;
-            this.TBDescuentoRead.Size = new System.Drawing.Size(59, 23);
+            this.TBDescuentoRead.Size = new System.Drawing.Size(32, 23);
             this.TBDescuentoRead.TabIndex = 11;
             // 
             // BtnFacturar
@@ -277,6 +277,7 @@
             this.BtnFacturar.TabIndex = 12;
             this.BtnFacturar.Text = "Facturar";
             this.BtnFacturar.UseVisualStyleBackColor = true;
+            this.BtnFacturar.Click += new System.EventHandler(this.BtnFacturar_Click);
             // 
             // TBCantidad
             // 
@@ -299,7 +300,7 @@
             this.TBImpVentaRead.Location = new System.Drawing.Point(319, 259);
             this.TBImpVentaRead.Name = "TBImpVentaRead";
             this.TBImpVentaRead.ReadOnly = true;
-            this.TBImpVentaRead.Size = new System.Drawing.Size(59, 23);
+            this.TBImpVentaRead.Size = new System.Drawing.Size(32, 23);
             this.TBImpVentaRead.TabIndex = 16;
             // 
             // label7
@@ -328,21 +329,22 @@
             this.label8.TabIndex = 17;
             this.label8.Text = "N* Factura";
             // 
-            // button1
+            // BtnCodigoCliente
             // 
-            this.button1.Location = new System.Drawing.Point(12, 193);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(114, 23);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.BtnCodigoCliente.Location = new System.Drawing.Point(12, 193);
+            this.BtnCodigoCliente.Name = "BtnCodigoCliente";
+            this.BtnCodigoCliente.Size = new System.Drawing.Size(114, 23);
+            this.BtnCodigoCliente.TabIndex = 19;
+            this.BtnCodigoCliente.Text = "Buscar";
+            this.BtnCodigoCliente.UseVisualStyleBackColor = true;
+            this.BtnCodigoCliente.Click += new System.EventHandler(this.BtnCodigoCliente_Click);
             // 
-            // textBox5
+            // TBCodigoCliente
             // 
-            this.textBox5.Location = new System.Drawing.Point(12, 164);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(114, 23);
-            this.textBox5.TabIndex = 20;
+            this.TBCodigoCliente.Location = new System.Drawing.Point(12, 164);
+            this.TBCodigoCliente.Name = "TBCodigoCliente";
+            this.TBCodigoCliente.Size = new System.Drawing.Size(114, 23);
+            this.TBCodigoCliente.TabIndex = 20;
             // 
             // label9
             // 
@@ -362,23 +364,24 @@
             this.label10.TabIndex = 22;
             this.label10.Text = "Cliente";
             // 
-            // textBox6
+            // TBNombreCliente
             // 
-            this.textBox6.Location = new System.Drawing.Point(467, 27);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(306, 23);
-            this.textBox6.TabIndex = 23;
+            this.TBNombreCliente.Location = new System.Drawing.Point(467, 27);
+            this.TBNombreCliente.Name = "TBNombreCliente";
+            this.TBNombreCliente.ReadOnly = true;
+            this.TBNombreCliente.Size = new System.Drawing.Size(306, 23);
+            this.TBNombreCliente.TabIndex = 23;
             // 
             // VentanaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(785, 414);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.TBNombreCliente);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.TBCodigoCliente);
+            this.Controls.Add(this.BtnCodigoCliente);
             this.Controls.Add(this.TBNumFact);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.TBImpVentaRead);
@@ -388,10 +391,10 @@
             this.Controls.Add(this.BtnFacturar);
             this.Controls.Add(this.TBDescuentoRead);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.LbValorTotal);
+            this.Controls.Add(this.Lbtotal);
+            this.Controls.Add(this.LbValorSubtotal);
+            this.Controls.Add(this.LbSubtotal);
             this.Controls.Add(this.LbCodigoProducto);
             this.Controls.Add(this.TBCodigoProducto);
             this.Controls.Add(this.BtnAgregarProducto);
@@ -427,10 +430,10 @@
         private Button BtnAgregarProducto;
         private TextBox TBCodigoProducto;
         private Label LbCodigoProducto;
-        private Label label1;
-        private Label label2;
-        private Label label3;
-        private Label label4;
+        private Label LbSubtotal;
+        private Label LbValorSubtotal;
+        private Label Lbtotal;
+        private Label LbValorTotal;
         private Label label5;
         private TextBox TBDescuentoRead;
         private Button BtnFacturar;
@@ -440,11 +443,11 @@
         private Label label7;
         private TextBox TBNumFact;
         private Label label8;
-        private Button button1;
-        private TextBox textBox5;
+        private Button BtnCodigoCliente;
+        private TextBox TBCodigoCliente;
         private Label label9;
         private Label label10;
-        private TextBox textBox6;
+        private TextBox TBNombreCliente;
         private ToolStripMenuItem MiImpVenta;
         private ToolStripMenuItem MiDescuento;
         private ToolStripTextBox TBImpVenta;
