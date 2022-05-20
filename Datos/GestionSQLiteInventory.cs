@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System.Collections.Generic;
+using System.Data;
 
 namespace Datos
 {
@@ -28,6 +29,12 @@ namespace Datos
             string Query = $"delete from Tbl_Inventario where id = {id}";
             flag = conexionSQLite.QuerySQLite(Query, 1);
             return flag;
+        }
+        public List<string> ConsultaInventario(string codigo)
+        {
+            string Query = $"SELECT producto, Precio FROM Tbl_Inventario where Codigo = '{codigo}'";
+            List<string> resp = conexionSQLite.ConsultarDatosSQLite(Query);
+            return resp;
         }
         public DataTable ConsultarProducto()
         {

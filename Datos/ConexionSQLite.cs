@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SQLite;
 namespace Datos
@@ -46,26 +47,22 @@ namespace Datos
             SQLite.Close();
             return table;
         }
-
-        public string ConsultarNumFactSQLite(string Query)
+        public List<string> ConsultarDatosSQLite(string Query)
         {
             SQLite.Open();
-            string resp;
+            List<string> resp = new List<string>();
             SQLiteCommand cmd = new SQLiteCommand(Query, SQLite);
             SQLiteDataReader reg = cmd.ExecuteReader();
-            if (reg.Read()) { resp = reg["numfact"].ToString(); }
-            else { resp = "Null"; }
-            SQLite.Close();
-            return resp;
-        }
-        public Tuple<string, string> ConsultarDatosSQLite(string Query)
-        {
-            SQLite.Open();
-            Tuple<string, string> resp;
-            SQLiteCommand cmd = new SQLiteCommand(Query, SQLite);
-            SQLiteDataReader reg = cmd.ExecuteReader();
-            if (reg.Read()) { resp = Tuple.Create(reg["producto"].ToString(), reg["precio"].ToString()); }
-            else { resp = Tuple.Create("Null", "Null"); }
+            if (reg.Read())
+            {
+                for (int key = 0; key < reg.FieldCount; key++)
+                { resp.Add(reg.GetValue(key).ToString()); }
+            }
+            else
+            {
+                for (int key = 0; key < reg.FieldCount; key++)
+                { resp.Add("Null"); }
+            }
             SQLite.Close();
             return resp;
         }
