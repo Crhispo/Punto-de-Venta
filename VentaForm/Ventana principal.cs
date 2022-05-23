@@ -58,13 +58,12 @@ namespace VentaForm
             List<string> consulta = gestionSQLiteInventoryN.ConsultaInventarioN(TBCodigoProducto.Text);
             row["Codigo"] = TBCodigoProducto.Text;
             row["Producto"] = consulta[0];
-            row["Precio x Unidad"] = consulta[1];
+            row["Precio x Unidad"] = consulta[1].Replace(",", ".");
             row["Cantidad"] = TBCantidad.Text;
-            row["Descuento"] = TBDescuento.Text;
-            row["Precio Total"] = int.Parse(TBCantidad.Text) * double.Parse(consulta[1]);
+            row["Descuento"] = TBDescuento.Text.Replace(",",".");
+            row["Precio Total"] = double.Parse(TBCantidad.Text) * double.Parse(consulta[1].Replace(",","."));
 
             dt.Rows.Add(row);
-
             subtotal += (int.Parse(TBCantidad.Text) * double.Parse(consulta[1]));
 
             desc = int.Parse(TBDescuentoRead.Text);
@@ -104,7 +103,7 @@ namespace VentaForm
                 factura.PrecioTotal = row["Precio Total"].ToString();
                 factura.Cliente = TBCodigoCliente.Text;
                 factura.Descuento = TBDescuento.Text;
-                factura.Total = total.ToString();
+                factura.Total = total.ToString().Replace(",",".");
                 factura.NumFact = TBNumFact.Text;
 
                 ListaFactura.Add(factura);
