@@ -1,19 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.SQLite;
+using System.Data.SqlClient;
 namespace Datos
 {
     public class ConexionSQLite
     {
-        int flag = 0;
-        static readonly string connectionString = @"Data Source=.\Puntodeventa.sqlite;";
-        readonly SQLiteConnection SQLite = new SQLiteConnection(connectionString);
+        static readonly string connectionString = @"server=DESKTOP-DIP02I4\SQLSERVER; database=Punto-de-venta; integrated security=true;";
+        readonly SqlConnection Sql = new SqlConnection(connectionString);
         public int QuerySQLite(string Query, int TipoQuery)
         {
-            int resp;
-            SQLite.Open();
-            SQLiteCommand cmd = new SQLiteCommand(Query, SQLite);
+            int flag;
+            int resp = 0;
+            Sql.Open();
+            SqlCommand cmd = new SqlCommand(Query, Sql);
             /*
             Codigo numerico tipo de Query
             Consulta Login = 0
@@ -22,37 +22,44 @@ namespace Datos
             switch (TipoQuery)
             {
                 case 0:
-                    int count;
-                    count = Convert.ToInt32(cmd.ExecuteScalar());
-                    resp = count;
+                    flag = Convert.ToInt32(cmd.ExecuteScalar());
+                    resp = flag;
                     break;
                 case 1:
                     flag = cmd.ExecuteNonQuery();
                     resp = flag;
                     break;
-                default:
-                    resp = flag;
-                    break;
+
             };
-            SQLite.Close();
+            Sql.Close();
+            return resp;
+        }
+        public int QuerySQLiteAsync(string Query)
+        {
+            int flag;
+            Sql.Open();
+            SqlCommand cmd = new SqlCommand(Query, Sql);
+            flag = cmd.ExecuteNonQuery();
+            int resp = flag;
+            Sql.Close();
             return resp;
         }
         public DataTable Consultartable(string Query)
         {
-            SQLite.Open();
-            SQLiteCommand cmd = new SQLiteCommand(Query, SQLite);
-            SQLiteDataAdapter data = new SQLiteDataAdapter(cmd);
+            Sql.Open();
+            SqlCommand cmd = new SqlCommand(Query, Sql);
+            SqlDataAdapter data = new SqlDataAdapter(cmd);
             DataTable table = new DataTable();
             data.Fill(table);
-            SQLite.Close();
+            Sql.Close();
             return table;
         }
         public List<string> ConsultarDatosSQLite(string Query)
         {
-            SQLite.Open();
+            Sql.Open();
             List<string> resp = new List<string>();
-            SQLiteCommand cmd = new SQLiteCommand(Query, SQLite);
-            SQLiteDataReader reg = cmd.ExecuteReader();
+            SqlCommand cmd = new SqlCommand(Query, Sql);
+            SqlDataReader reg = cmd.ExecuteReader();
             if (reg.Read())
             {
                 for (int key = 0; key < reg.FieldCount; key++)
@@ -63,7 +70,7 @@ namespace Datos
                 for (int key = 0; key < reg.FieldCount; key++)
                 { resp.Add("Null"); }
             }
-            SQLite.Close();
+            Sql.Close();
             return resp;
         }
 
