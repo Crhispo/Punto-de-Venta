@@ -1,16 +1,15 @@
 ﻿using Entidades;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 
 namespace Datos
 {
-    public class GestionSQLiteInvoicing
+    public class GestionSqlInvoicing
     {
-        readonly ConexionSQLite conexionSQLite = new ConexionSQLite();
+        readonly ConexionSql conexionSQLite = new ConexionSql();
         public List<string> Consultanumfact()
         {
             string Query = "Select(Select Top 1 numfact from Tbl_Facturacion order by numfact desc) +1 as numfact";
-            List<string> resp = conexionSQLite.ConsultarDatosSQLite(Query);
+            List<string> resp = conexionSQLite.ConsultarDatosSql(Query);
             return resp;
         }
         public int InsertarFactura(List<Factura> ObjectFactura)
@@ -19,7 +18,7 @@ namespace Datos
             foreach (var factura in ObjectFactura)
             {
                 string Query = $"INSERT INTO Tbl_Facturacion (codigo, producto, precioxunidad, cantidad, codigocliente, descuentocliente, montototal, numfact) VALUES ('{factura.Codigo}','{factura.Producto}',{factura.PrecioxUnidad},{factura.Cantidad},'{factura.Cliente}',{factura.ClienteDesc},{factura.Total},{factura.NumFact})";
-                flag = conexionSQLite.QuerySQLiteAsync(Query);
+                flag = conexionSQLite.QuerySql(Query, 1);
                 int resp = flag;
             }
             return flag;

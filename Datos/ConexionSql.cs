@@ -4,11 +4,11 @@ using System.Data;
 using System.Data.SqlClient;
 namespace Datos
 {
-    public class ConexionSQLite
+    public class ConexionSql
     {
         static readonly string connectionString = @"server=DESKTOP-DIP02I4\SQLSERVER; database=Punto-de-venta; integrated security=true;";
         readonly SqlConnection Sql = new SqlConnection(connectionString);
-        public int QuerySQLite(string Query, int TipoQuery)
+        public int QuerySql(string Query, int TipoQuery)
         {
             int flag;
             int resp = 0;
@@ -29,18 +29,7 @@ namespace Datos
                     flag = cmd.ExecuteNonQuery();
                     resp = flag;
                     break;
-
             };
-            Sql.Close();
-            return resp;
-        }
-        public int QuerySQLiteAsync(string Query)
-        {
-            int flag;
-            Sql.Open();
-            SqlCommand cmd = new SqlCommand(Query, Sql);
-            flag = cmd.ExecuteNonQuery();
-            int resp = flag;
             Sql.Close();
             return resp;
         }
@@ -54,7 +43,7 @@ namespace Datos
             Sql.Close();
             return table;
         }
-        public List<string> ConsultarDatosSQLite(string Query)
+        public List<string> ConsultarDatosSql(string Query)
         {
             Sql.Open();
             List<string> resp = new List<string>();

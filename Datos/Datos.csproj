@@ -71,11 +71,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConexionSQLite.cs" />
-    <Compile Include="GestionSQLiteClient.cs" />
-    <Compile Include="GestionSQLiteInventory.cs" />
-    <Compile Include="GestionSQLiteInvoicing.cs" />
-    <Compile Include="GestionSQLiteUsers.cs" />
+    <Compile Include="ConexionSql.cs" />
+    <Compile Include="GestionSqlClient.cs" />
+    <Compile Include="GestionSqlInventory.cs" />
+    <Compile Include="GestionSqlInvoicing.cs" />
+    <Compile Include="GestionSqlUsers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
