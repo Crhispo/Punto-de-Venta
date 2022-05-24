@@ -4,9 +4,9 @@ using System.Collections.Generic;
 
 namespace Negocios
 {
-    public class GestionSQLiteInvoicingN
+    public class GestionSqlInvoicingN
     {
-        readonly GestionSQLiteInvoicing GestionSQLiteInvoicing = new GestionSQLiteInvoicing();
+        readonly GestionSqlInvoicing GestionSQLiteInvoicing = new GestionSqlInvoicing();
         public List<string> ExtraerNumFact()
         {
             return GestionSQLiteInvoicing.Consultanumfact();
