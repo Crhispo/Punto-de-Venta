@@ -2,25 +2,24 @@
 using Negocios;
 using Presentacion;
 using System.Data;
+using System.Drawing.Printing;
 namespace VentaForm
 {
     public partial class VentanaPrincipal : Form
     {
-        readonly GestionSQLiteInvoicingN gestionSQLiteInvoicingN = new();
-        readonly GestionSQLiteInventoryN gestionSQLiteInventoryN = new();
-        readonly GestionSQLiteClientN gestionSQLiteClientN = new();
+        readonly GestionSqlInvoicingN gestionSqlInvoicingN = new();
+        readonly GestionSqlInventoryN gestionSqliInventoryN = new();
+        readonly GestionSqlClientN gestionSqlClientN = new();
         private readonly DataTable dt;
         private double subtotal = 0;
         private double total = 0;
         private int desc;
-
         public VentanaPrincipal()
         {
             InitializeComponent();
-            TBNumFact.Text = gestionSQLiteInvoicingN.ExtraerNumFact()[0];
+            TBNumFact.Text = gestionSqlInvoicingN.ExtraerNumFact()[0];
             TBImpVentaRead.Text = (double.Parse(TBImpVenta.Text) * 100).ToString();
             TBDescuentoRead.Text = (double.Parse(TBDescuento.Text) * 100).ToString();
-
             dt = new DataTable();
             dt.Columns.Add("Codigo"); dt.Columns.Add("Producto"); dt.Columns.Add("Precio x Unidad"); dt.Columns.Add("Cantidad"); dt.Columns.Add("Descuento"); dt.Columns.Add("Precio Total");
             DtgFacturacion.DataSource = dt;
@@ -43,6 +42,13 @@ namespace VentaForm
             FU.ShowDialog();
             this.Show();
         }
+        private void MiClientes_Click(object sender, EventArgs e)
+        {
+            Formulario_Cliente FU = new();
+            this.Hide();
+            FU.ShowDialog();
+            this.Show();
+        }
         private void TBImpVenta_TextChanged(object sender, EventArgs e)
         {
             TBImpVentaRead.Text = (double.Parse(TBImpVenta.Text) * 100).ToString();
@@ -55,13 +61,13 @@ namespace VentaForm
         {
             DataRow row = dt.NewRow();
 
-            List<string> consulta = gestionSQLiteInventoryN.ConsultaInventarioN(TBCodigoProducto.Text);
+            List<string> consulta = gestionSqliInventoryN.ConsultaInventarioN(TBCodigoProducto.Text);
             row["Codigo"] = TBCodigoProducto.Text;
             row["Producto"] = consulta[0];
             row["Precio x Unidad"] = consulta[1].Replace(",", ".");
             row["Cantidad"] = TBCantidad.Text;
-            row["Descuento"] = TBDescuento.Text.Replace(",",".");
-            row["Precio Total"] = double.Parse(TBCantidad.Text) * double.Parse(consulta[1].Replace(",","."));
+            row["Descuento"] = TBDescuento.Text.Replace(",", ".");
+            row["Precio Total"] = double.Parse(TBCantidad.Text) * double.Parse(consulta[1].Replace(",", "."));
 
             dt.Rows.Add(row);
             subtotal += (int.Parse(TBCantidad.Text) * double.Parse(consulta[1]));
@@ -84,7 +90,7 @@ namespace VentaForm
         }
         private void BtnCodigoCliente_Click(object sender, EventArgs e)
         {
-            List<string> consulta = gestionSQLiteClientN.ConsultaCliente(TBCodigoCliente.Text);
+            List<string> consulta = gestionSqlClientN.ConsultaCliente(TBCodigoCliente.Text);
             TBNombreCliente.Text = consulta[0];
             TBDescuento.Text = consulta[1];
         }
@@ -103,13 +109,38 @@ namespace VentaForm
                 factura.PrecioTotal = row["Precio Total"].ToString();
                 factura.Cliente = TBCodigoCliente.Text;
                 factura.Descuento = TBDescuento.Text;
-                factura.Total = total.ToString().Replace(",",".");
+                factura.Total = total.ToString().Replace(",", ".");
                 factura.NumFact = TBNumFact.Text;
 
                 ListaFactura.Add(factura);
             }
-            gestionSQLiteInvoicingN.InsertarFacturaN(ListaFactura);
-            TBNumFact.Text = gestionSQLiteInvoicingN.ExtraerNumFact()[0];
+            gestionSqlInvoicingN.InsertarFacturaN(ListaFactura);
+            TBNumFact.Text = gestionSqlInvoicingN.ExtraerNumFact()[0];
+
+            ReporteFactura = new PrintDocument();
+            PrinterSettings ps = new PrinterSettings();
+            ReporteFactura.PrinterSettings = ps;
+            ReporteFactura.PrintPage += ImprimirFactura;
+            ReporteFactura.Print();
+
+        }
+
+        private void ImprimirFactura(object sender, PrintPageEventArgs e)
+        {
+            Font font = new Font("Arial", 14);
+            int ancho = 300;
+            int alt = 300;
+            int y = 20;
+            int x = 40;
+            e.Graphics.DrawString($"--- Punto de venta ---\n Numero de factura: {TBNumFact.Text} \n Cliente: {TBNombreCliente.Text} \n ---- Productos ----\n\n", font, Brushes.Black, new RectangleF(x, y+= 40, ancho, alt));
+            e.Graphics.DrawString($"------------------------------------------", font, Brushes.Black, new RectangleF(x, y += 90, ancho, alt));
+            foreach (DataRow row in dt.Rows)
+            {
+                
+                e.Graphics.DrawString($"\nId: {row["Codigo"]} \nProducto: {row["Producto"]} \nPrecio: {row["Precio Total"]}\n", font, Brushes.Black, new RectangleF(x, y += 10, ancho, alt));
+                e.Graphics.DrawString($"------------------------", font, Brushes.Black, new RectangleF(x, y += 80, ancho, alt));
+            }
+            e.Graphics.DrawString($"\n---- Aponderado ---- \nSubtotal: {subtotal} \nTotal: ${total} \n---- Gracias por su compra ----", font, Brushes.Black, new RectangleF(x, y += 20, ancho, alt));
         }
     }
 }

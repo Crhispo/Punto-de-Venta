@@ -229,7 +229,6 @@
             this.Controls.Add(this.DGUsers);
             this.Name = "FormUsers";
             this.Text = "FormUsers";
-            this.Load += new System.EventHandler(this.FormUsers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGUsers)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

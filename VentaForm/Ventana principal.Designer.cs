@@ -63,6 +63,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.TBNombreCliente = new System.Windows.Forms.TextBox();
+            this.ReporteFactura = new System.Drawing.Printing.PrintDocument();
             this.mS.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DtgFacturacion)).BeginInit();
@@ -158,6 +159,7 @@
             this.MiClientes.Name = "MiClientes";
             this.MiClientes.Size = new System.Drawing.Size(61, 20);
             this.MiClientes.Text = "Clientes";
+            this.MiClientes.Click += new System.EventHandler(this.MiClientes_Click);
             // 
             // MiReportes
             // 
@@ -372,6 +374,10 @@
             this.TBNombreCliente.Size = new System.Drawing.Size(306, 23);
             this.TBNombreCliente.TabIndex = 23;
             // 
+            // ReporteFactura
+            // 
+            this.ReporteFactura.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.ImprimirFactura);
+            // 
             // VentanaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -452,5 +458,6 @@
         private ToolStripMenuItem MiDescuento;
         private ToolStripTextBox TBImpVenta;
         private ToolStripTextBox TBDescuento;
+        private System.Drawing.Printing.PrintDocument ReporteFactura;
     }
 }

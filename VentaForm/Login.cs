@@ -3,7 +3,7 @@ namespace VentaForm
 {
     public partial class Login : Form
     {
-        readonly GestionSQLiteUsersN CNN = new();
+        readonly GestionSqlUsersN CNN = new();
         public Login()
         {
             InitializeComponent();
@@ -14,7 +14,7 @@ namespace VentaForm
         }
         private void BtnIniciar_Click(object sender, EventArgs e)
         {
-            if (CNN.ConSQLite(TbUser.Text, TbPassword.Text) == 1)
+            if (CNN.ConSql(TbUser.Text, TbPassword.Text) == 1)
             {
                 MessageBox.Show("El usuario a sido encontrado");
                 this.Hide();
