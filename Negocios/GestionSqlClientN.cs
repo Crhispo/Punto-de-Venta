@@ -1,6 +1,7 @@
 ﻿using Datos;
 using System.Collections.Generic;
 using System.Data;
+
 namespace Negocios
 {
     public class GestionSqlClientN
